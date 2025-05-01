@@ -3,7 +3,7 @@ import { use, useState } from "react";
 const initialFriends = [
   {
     id: 118836,
-    name: "Ahmed.H",
+    name: "Clark",
     image: "https://i.pravatar.cc/48?u=118836",
     balance: -7,
   },
@@ -64,10 +64,7 @@ function App() {
   return (
     <>
       <div className="app-container ">
-        <header className="app-header">
-          <h1>💰 Bill Splitter</h1>
-          <p>Split expenses with friends made easy</p>
-        </header>
+        <Logo />
         <div className="app">
           <div className="sidebar">
             <FriendsList
@@ -88,22 +85,38 @@ function App() {
             <SplitBillForm
               onSplit={handelSplitBill}
               selectedFriend={selectedFriend}
+              key={selectedFriend.id}
             />
           )}
         </div>
-        <footer className="app-footer">
-          <div className="footer-content">
-            <p>© {new Date().getFullYear()} Bill Splitter App</p>
-            <div className="footer-links">
-              <a href="#">Terms</a>
-              <a href="#">Privacy</a>
-              <a href="#">Contact</a>
-            </div>
-            <p>Made with love By Youssef Hikal 😎</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
+  );
+}
+
+function Logo() {
+  return (
+    <header className="app-header">
+      <h1>💰 Bill Splitter</h1>
+      <p>Split expenses with friends made easy</p>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="app-footer">
+      <div className="footer-content">
+        <p>© {new Date().getFullYear()} Bill Splitter App</p>
+        <div className="footer-links">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Contact</a>
+        </div>
+        <p>Made with love By Youssef Hikal 😎</p>
+      </div>
+    </footer>
   );
 }
 
@@ -207,18 +220,22 @@ function SplitBillForm({ selectedFriend, onSplit }) {
       <h2>Split a bill with {selectedFriend.name} </h2>
       <label> 💰 bill value </label>
       <input
-        type="text"
+        type="number"
         value={bill}
         onChange={(e) => setBill(+e.target.value)}
       ></input>
 
       <label> 🕴️ Your expense </label>
       <input
-        type="text"
+        type="number"
         max={bill}
         value={paidByUser}
         onChange={(e) =>
-          setPaidByUser(+e.target.value > bill ? paidByUser : +e.target.value)
+          setPaidByUser(
+            +e.target.value > bill || e.target.value < 0
+              ? paidByUser
+              : +e.target.value
+          )
         }
       ></input>
 
