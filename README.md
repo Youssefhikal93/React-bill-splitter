@@ -24,5 +24,6 @@ A responsive application to split bills with friends, track balances, and manage
 ```bash
 git clone https://github.com/Youssefhikal93/bill-splitter-react.git
 
+```
 
-### <💙 Happy Coding ! 💻👨‍💻 💙/>
+###<💙 Happy Coding ! 💻👨‍💻 💙/>
