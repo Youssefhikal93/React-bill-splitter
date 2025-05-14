@@ -26,4 +26,4 @@ git clone https://github.com/Youssefhikal93/bill-splitter-react.git
 
 ```
 
-###<💙 Happy Coding ! 💻👨‍💻 💙/>
+### <💙 Happy Coding ! 💻👨‍💻 💙/>
