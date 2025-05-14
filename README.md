@@ -3,7 +3,7 @@
 A responsive application to split bills with friends, track balances, and manage friend lists with ease.
 
 ### 🌐 Live Website
-> Hosted on Netlify: [Click here to open]([https://your-app-url.onrender.com](https://bill-splitters.netlify.app/))
+> Hosted on Netlify: [Click here to open](https://your-app-url.onrender.com](https://bill-splitters.netlify.app/)
 
 ---
 
